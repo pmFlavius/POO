@@ -2,7 +2,7 @@
 
 int main()
 {
-    MultimeComplex m1;
+    MultimeComplex m1,m2;
     int x;
     cout<<"\n\n\n";
     while(1)
@@ -14,20 +14,22 @@ int main()
         cin>>x;
         if(x==0)
         {
-            return 0;
+            break;
         }
         else if(x==1)
         {
             Complex c;
             c.citire();
             m1.adauga(c);
-            m1.afisare();
+            m2=m1;
+            m2.afisare();
         }
         else if(x==2)
         {
             Complex c;
             c.citire();
-            m1.extrage(c);
+            m2.extrage(c);
+            m2.afisare();
             m1.afisare();
         }
     }
