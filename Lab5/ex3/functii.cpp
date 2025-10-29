@@ -28,21 +28,23 @@ void MultimeComplex::adauga(Complex c)
 {
     if (n + 1 > dim)
     {
-        cout << "Vector plin";
+        cout << "Vector plin, mai scoate din el";
         return;
     }
     else
     {
-        v[n++] = c; // constr de copiere folosit
+        v[n++] = c; 
     }
 }
 
 void MultimeComplex::extrage(Complex c)
 {
+    bool ok = 0;
     for (int i = 0; i < n; i++)
     {
         if (v[i].egal(c))
         {
+            ok = 1;
             for (int j = i; j < n - 1; j++)
             {
                 v[i] = v[i + 1];
@@ -50,6 +52,8 @@ void MultimeComplex::extrage(Complex c)
             n--;
         }
     }
+    if (ok == 0)
+        cout << "Nu se gaseste n lista";
 }
 
 void MultimeComplex::afisare()
